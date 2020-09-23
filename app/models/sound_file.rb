@@ -1,0 +1,2 @@
+class SoundFile < ApplicationRecord
+end
