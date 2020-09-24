@@ -12,7 +12,6 @@ module GoogleCloudStorageUtil
 
   def getImageUrl(fileName, bucket)
     file = bucket.file(fileName)
-    byebug
     if !file.nil?
       file.signed_url(method: "GET", expires: 60 * 60 * 24)
     else

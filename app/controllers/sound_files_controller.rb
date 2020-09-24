@@ -1,11 +1,13 @@
 class SoundFilesController < ApplicationController
   include GoogleCloudStorageUtil
+  include GoogleCloudSpeechUtil
 
   def new
     @b = getBucket()
     @r = { name: "yamada" }
     @url = getImageUrl("doraemon2.wav", @b)
-    render :json => @url
+    texts = recognize(@url)
+    render :json => texts
   end
 
   def create

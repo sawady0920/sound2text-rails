@@ -46,3 +46,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'google-cloud-storage', '>=1.29.0'
+
+gem 'google-cloud-speech', '>=1.1.1'
+
+gem 'solargraph'
