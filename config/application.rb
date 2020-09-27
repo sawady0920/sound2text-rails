@@ -34,5 +34,9 @@ module Myapp
 
     # APIモードを使う
     config.api_only = true
+
+    # ローカルのファイルを表示してwebsockeとぉ使う場合
+    config.web_console.whitelisted_ips = '172.25.0.1' #追記
+    config.action_cable.allowed_request_origins = [/http:\/\/*/, /https:\/\/*/,/file:\/\/*/]
   end
 end

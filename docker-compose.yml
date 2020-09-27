@@ -15,6 +15,13 @@ services:
     command: bash -c "bash entrypoint.sh && /bin/bash"
     volumes:
       - .:/myapp
+      - .:/app:cached
+      - bundle:/usr/local/bundle:cached
+      # 1. exclude volumes
+      - /myapp/app/vendor
+      - /myapp/app/tmp
+      - /myapp/app/log
+      - /myapp/app/.git
     ports:
       - "3002:3000"
     depends_on:
@@ -23,4 +30,6 @@ services:
     tty: true
 volumes:
   mysql-data:
+    driver: local
+  bundle:
     driver: local
