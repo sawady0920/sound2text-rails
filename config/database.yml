@@ -48,6 +48,10 @@ test:
 #
 production:
   <<: *default
-  database: myapp_production
-  username: myapp
-  password: <%= ENV['MYAPP_DATABASE_PASSWORD'] %>
+  # database: myapp_production
+  # username: myapp
+  # password: <%= ENV['MYAPP_DATABASE_PASSWORD'] %>
+  # for heroku?
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
